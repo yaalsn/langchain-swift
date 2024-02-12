@@ -26,7 +26,7 @@ public class OpenAI: LLM {
         
         if let apiKey = env["OPENAI_API_KEY"] {
             let baseUrl = env["OPENAI_API_BASE"] ?? "api.openai.com"
-            let configuration = Configuration(apiKey: apiKey, api: API(scheme: .https, host: baseUrl))
+            let configuration = Configuration(apiKey: apiKey, api: API(scheme: .http, host: baseUrl))
 #if os(macOS) || os(iOS) || os(visionOS)
             let eventLoopGroup = ThreadManager.thread
 
